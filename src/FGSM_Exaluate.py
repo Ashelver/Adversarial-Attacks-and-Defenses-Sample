@@ -27,7 +27,7 @@ def adversarial_test(MODEL, attack_algorithm, epsilon=0.001, num_steps=1):
 if __name__ == "__main__":
     classifier = SVHN_ViTClassifier(batch_size=64, lr=3e-4, epochs=15)
     # classifier.train()
-    classifier.load_model('../models/FGSMT_ViT.pt')
+    classifier.load_model('../models/FGSMT_ViT.pth-epoch-7.pt')
 
     # Different epsilon values
     epsilon_values = [0.0, 0.001, 0.003, 0.006, 0.01, 0.03, 0.06, 0.1]

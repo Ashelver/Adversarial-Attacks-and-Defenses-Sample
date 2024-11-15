@@ -118,7 +118,7 @@ class SVHN_ViTClassifier:
     def load_model(self, path):
         self.model.load_state_dict(torch.load(path))
         self.model.to(self.device)
-        print("Load",path,"successful!")
+        print("Load",path,"successfully!")
 
 # Execute for training
 if __name__ == "__main__":
