@@ -62,7 +62,7 @@ class SVHN_ViTClassifier:
         self.model.train()
         for epoch in range(self.epochs):
             start_time = time.time()
-            save_checkpoints = self.save_path + '-epoch-' + str(epoch) + '.pt'
+            save_checkpoints = self.save_path + '-epoch-' + str(epoch + 1) + '.pt'
             running_loss = 0.0
             correct, total = 0, 0
             with tqdm(self.train_loader, desc=f'Epoch {epoch+1}/{self.epochs}') as pbar:
@@ -122,6 +122,6 @@ class SVHN_ViTClassifier:
 
 # Execute for training
 if __name__ == "__main__":
-    classifier = SVHN_ViTClassifier(batch_size=64, lr=3e-4, epochs=15)
+    classifier = SVHN_ViTClassifier(batch_size=64, lr=3e-4, epochs=30)
     classifier.train()
     classifier.test()
